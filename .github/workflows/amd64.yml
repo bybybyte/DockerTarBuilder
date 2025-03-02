@@ -16,6 +16,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Delete temp files
+      run: |
+        rm *.tar *.gz
+        docker image prune -a -f
+
     - name: Pull Docker Images and Package
       run: |
         images="${{ github.event.inputs.docker_images }}"
