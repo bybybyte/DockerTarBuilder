@@ -18,7 +18,6 @@ jobs:
 
     - name: Delete temp files
       run: |
-        rm *.tar *.gz 2>/dev/null
         docker image prune -a -f
 
     - name: Pull Docker Images and Package
